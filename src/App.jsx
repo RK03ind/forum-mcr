@@ -7,6 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import Post from "./pages/Post/Post";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Sidebar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/post/:postId" element={<Post />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>

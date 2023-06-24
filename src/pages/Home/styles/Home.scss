@@ -3,7 +3,16 @@
   flex-direction: column;
   gap: 2rem;
   position: relative;
+  width: calc(100vw - 15rem);
   .post-filter {
     position: absolute;
+    right: 220px;
+    select {
+      padding: 0.8rem 0.4rem;
+      width: 150px;
+      outline: none;
+      border: 0;
+      background: #e6e6e6;
+    }
   }
 }

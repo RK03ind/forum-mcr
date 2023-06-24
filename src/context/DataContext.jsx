@@ -46,14 +46,41 @@ const intialValue = {
 };
 const reducer = (state, action) => {
   switch (action.type) {
+    case "VOTE": {
+      return {
+        posts: state.posts.map((item) => ({
+          ...item,
+          [action.payload.voteType]:
+            item.postId === action.payload.postId
+              ? item[action.payload.voteType] + 1
+              : item[action.payload.voteType],
+        })),
+      };
+    }
+    case "RESTORE": {
+      return {
+        posts: state.posts.map((item) => ({
+          ...item,
+          [action.payload.voteType]:
+            item.postId === action.payload.postId
+              ? item[action.payload.voteType] - 1
+              : item[action.payload.voteType],
+        })),
+      };
+    }
     default:
       return state;
   }
 };
+
 export const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, intialValue);
+
+  const getById = (postId) => {
+    return state.posts.find((item) => item.postId === postId);
+  };
   return (
-    <DataContext.Provider value={{ state, dispatch }}>
+    <DataContext.Provider value={{ state, dispatch, getById }}>
       {children}
     </DataContext.Provider>
   );
