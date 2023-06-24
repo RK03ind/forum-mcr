@@ -1,6 +1,12 @@
 import Sidebar from "./shared/Sidebar/Sidebar";
 import "./App.css";
-import { Navigate, Route, Router, Routes } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
@@ -12,6 +18,7 @@ function App() {
         <main>
           <Sidebar />
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>

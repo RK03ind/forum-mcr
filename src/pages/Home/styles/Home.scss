@@ -1,0 +1,9 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  .post-filter {
+    position: absolute;
+  }
+}
