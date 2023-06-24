@@ -1,20 +1,32 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./styles/Home.scss";
 import { DataContext } from "../../context/DataContext";
 import PostItem from "../../shared/PostItem/PostItem";
-import { BiSolidDownArrow } from "react-icons/bi";
 const Home = () => {
   const dataCtx = useContext(DataContext);
-  const [sortState, setSortState] = useState(false);
+  const [sortState, setSortState] = useState(0);
   const sortChangeHandler = (e) => {
-    setSortState(e.target.value);
+    setSortState(parseInt(e.target.value));
   };
+  useEffect(() => {
+    console.log(sortState);
+  }, [sortState]);
   return (
     <div className="home-page">
       <h2>All Posts</h2>
-      {dataCtx.state.posts.map((item) => (
-        <PostItem key={item.postId} {...item} />
-      ))}
+      {dataCtx.state.posts
+        .slice()
+        .sort(
+          (
+            { upvotes: a, downvotes: b, createdAt: c },
+            { upvotes: e, downvotes: f, createdAt: d }
+          ) => {
+            return sortState ? new Date(d) - new Date(c) : a - b + (e - f);
+          }
+        )
+        .map((item) => (
+          <PostItem key={item.postId} {...item} />
+        ))}
       <div className="post-filter">
         <h2>Sort By</h2>
         <select
@@ -22,8 +34,8 @@ const Home = () => {
           defaultValue={sortState}
           onClick={sortChangeHandler}
         >
-          <option value="true">Latest Posts</option>
-          <option value="false">Most Upvoted</option>
+          <option value="1">Latest Posts</option>
+          <option value="0">Most Upvoted</option>
         </select>
       </div>
     </div>
