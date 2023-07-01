@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import "./styles/Home.scss";
-import { DataContext } from "../../context/DataContext";
+import { DataContext } from "../../Context/DataContext";
 import PostItem from "../../shared/PostItem/PostItem";
 const Home = () => {
   const dataCtx = useContext(DataContext);

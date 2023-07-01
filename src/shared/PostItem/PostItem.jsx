@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import "./PostItem.scss";
 import { BiSolidUpArrow, BiSolidDownArrow } from "react-icons/bi";
 import { GoComment, GoShareAndroid, GoBookmark } from "react-icons/go";
-import { DataContext } from "../../context/DataContext";
+import { DataContext } from "../../Context/DataContext";
 import { useNavigate } from "react-router-dom";
 const PostItem = ({
   upvotes,
