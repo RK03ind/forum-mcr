@@ -1,5 +1,9 @@
 import { useContext } from "react";
+<<<<<<< HEAD
 import { DataContext } from "../../shit/DataContext";
+=======
+import { DataContext } from "../../context/DataContext";
+>>>>>>> parent of b2480f5 (FIX: Case issues)
 import "./styles/Post.scss";
 import PostItem from "../../shared/PostItem/PostItem";
 import { useNavigate, useParams } from "react-router-dom";

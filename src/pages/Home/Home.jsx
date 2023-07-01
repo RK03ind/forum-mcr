@@ -1,6 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import "./styles/Home.scss";
+<<<<<<< HEAD
 import { DataContext } from "../../shit/DataContext";
+=======
+import { DataContext } from "../../context/DataContext";
+>>>>>>> parent of b2480f5 (FIX: Case issues)
 import PostItem from "../../shared/PostItem/PostItem";
 const Home = () => {
   const dataCtx = useContext(DataContext);
