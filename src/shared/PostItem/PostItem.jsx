@@ -3,7 +3,7 @@ import "./PostItem.scss";
 import { BiSolidUpArrow, BiSolidDownArrow } from "react-icons/bi";
 import { GoComment, GoShareAndroid, GoBookmark } from "react-icons/go";
 <<<<<<< HEAD
-import { DataContext } from "../../shit/DataContext";
+import { DataContext } from "../../context/DataContext";
 =======
 import { DataContext } from "../../context/DataContext";
 >>>>>>> parent of b2480f5 (FIX: Case issues)

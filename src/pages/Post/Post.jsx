@@ -1,6 +1,6 @@
 import { useContext } from "react";
 <<<<<<< HEAD
-import { DataContext } from "../../shit/DataContext";
+import { DataContext } from "../../context/DataContext";
 =======
 import { DataContext } from "../../context/DataContext";
 >>>>>>> parent of b2480f5 (FIX: Case issues)
