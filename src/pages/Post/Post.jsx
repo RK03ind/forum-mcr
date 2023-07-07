@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DataContext } from "../../context/DataContext";
+import { DataContext } from "../../shit/DataContext";
 import "./styles/Post.scss";
 import PostItem from "../../shared/PostItem/PostItem";
 import { useNavigate, useParams } from "react-router-dom";
